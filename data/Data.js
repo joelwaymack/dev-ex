@@ -64,3 +64,9 @@ export const getOrderSummary = async () => {
         ordersOverThreshold: filter(orders, order => order.price * order.quantity > orderThreshold).length
     };
 }
+
+// Delete an order from the database using a parameterized query.
+export const deleteOrder = async (id) => {
+    const result = await pool.query('DELETE FROM orders WHERE id = $1', [id]);
+    return result.rowCount === 1;
+}
