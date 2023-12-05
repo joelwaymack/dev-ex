@@ -17,4 +17,4 @@ POST http://localhost:3000/orders
 }
 
 ### Delete an order
-DELETE http://localhost:3000/orders/1
+DELETE http://localhost:3000/orders/1 
